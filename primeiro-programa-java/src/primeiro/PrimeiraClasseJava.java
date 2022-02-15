@@ -13,19 +13,22 @@ public class PrimeiraClasseJava {
 
 		double media = (n1 + n2 + n3 + n4) / 4;
 
-		/*Condições lógicas if e else
-		if (media >= 70) {
-			System.out.println("A média é " + media + ", aluno reprovado!");
-		} else if(media >= 40 && media <= 69){
-			System.out.println("A média é " + media + ", aluno em recuperação!");
+		/*Operações lógicas aninhadas: Operações dentro de operações*/
+		
+		if(media >= 50) {
+			if(media >=70) {
+				if(media > 90) {
+					System.out.println("Aluno aprovado com média acima do comum");
+				}else {
+					System.out.println("Aluno aprovado direto");
+				}
+			}else {
+				System.out.println("Aluno em recuperação");
+			}
 		}else {
-			System.out.println("A média é " + media + ", aluno aprovado!");
-		}*/
+			System.out.println("Aluno reprovado direto");
+		}
 		
 		
-		/*Operadores tenários são para micro validações*/
-		
-		 String saidaResultado = media >= 70 ? "Aluno aprovado" : (media >= 40 && media <= 69) ? "Aluno em recuperação" : "Aluno Reprovado";
-		 System.out.println(saidaResultado);
 	}
 }

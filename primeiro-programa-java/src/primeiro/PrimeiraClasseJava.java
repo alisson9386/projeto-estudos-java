@@ -4,10 +4,14 @@ public class PrimeiraClasseJava {
 
 	public static void main(String[] args) {
 
-		/*Estrutura de repetição for*/
+		/*Estrutura de repetição for COM Break (parada)*/
 
-		for(int numero = 10; numero >= 0; numero--) {
-			System.out.println("O numero é: "+numero);
+		for(int numero = 0; numero <= 10; numero++) {
+			if(numero == 7) {
+				System.out.println("Opa, encontrei o numero 7");
+				System.out.println("Finalizando a execução");
+				break;
+			}
 		}
 			
 		

@@ -17,8 +17,16 @@ public class PrimeiraClasseJava {
 		int divisao = (int) (carrosNumero / pessoaNumero);
 		int resto = (int) (carrosNumero % pessoaNumero);
 		
-		//System.out.println(numeroPessoas +" pessoas\n"+ numCarros + " carros\n"+ divisao + " para cada um\n" + "Sobrou "+resto+" carro(s)");
-
-		JOptionPane.showMessageDialog(null, numeroPessoas +" pessoas\n"+ numCarros + " carros\n"+ divisao + " para cada um\n" + "Sobrou "+resto+" carro(s)");
+		int resposta = JOptionPane.showConfirmDialog(null, "Deseja ver o resultado da divisão?");
+		
+		if(resposta == 0) {
+			JOptionPane.showMessageDialog(null, numeroPessoas +" pessoas\n"+ numCarros + " carros\n"+ divisao + " para cada um\n");
+		}
+		
+		resposta = JOptionPane.showConfirmDialog(null, "Deseja ver o resto da divisão?");
+		
+		if(resposta == 0) {
+			JOptionPane.showMessageDialog(null,"Sobrou "+resto+" carro(s)");
+		}
 	}
 }

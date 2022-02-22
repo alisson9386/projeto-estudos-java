@@ -11,6 +11,9 @@ public class PrimeiraClasseJava {
 		 * aluno1 é referencia para o objeto aluno*/
 		
 		Aluno aluno1 = new Aluno(); /*Joao*/
+		aluno1.nome = "Joao";
+		
+		System.out.println(aluno1.nome);
 		
 		Aluno aluno2 = new Aluno(); /*Pedro*/
 		

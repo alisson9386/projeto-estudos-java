@@ -1,7 +1,7 @@
 package curdojava.classes;
 
 public class Aluno {
-	
+
 	String nome;
 	int idade;
 	String dataNascimento;
@@ -12,6 +12,17 @@ public class Aluno {
 	String dataMatricula;
 	String nomeEscola;
 	String serieMatriculado;
-	
 
+	public Aluno() {
+		
+	}
+	
+	public Aluno(String nomePadrao) {
+		nome = nomePadrao;
+	}
+	
+	public Aluno(String nomePadrao, int idadePadrao) {
+		nome = nomePadrao;
+		idade = idadePadrao;
+	}
 }

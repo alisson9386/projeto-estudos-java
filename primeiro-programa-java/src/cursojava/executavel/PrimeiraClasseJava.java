@@ -5,7 +5,11 @@ import curdojava.classes.Aluno;
 public class PrimeiraClasseJava {
 
 	public static void main(String[] args) {
-
+		
+		
+		/*new Aluno() é uma instancia (criação de objeto)
+		 * aluno1 é referencia para o objeto aluno*/
+		
 		Aluno aluno1 = new Aluno(); /*Joao*/
 		
 		Aluno aluno2 = new Aluno(); /*Pedro*/

@@ -2,6 +2,7 @@ package curdojava.classes;
 
 public class Aluno {
 
+	/*Atributos do aluno*/
 	String nome;
 	int idade;
 	String dataNascimento;

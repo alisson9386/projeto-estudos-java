@@ -21,7 +21,6 @@ public class PrimeiraClasseJava {
 		String nota4 = JOptionPane.showInputDialog("4° nota");
 		String nomeEscola = JOptionPane.showInputDialog("Nome da escola");
 		
-		/*Aluno aluno1 = null; - NullPointerException*/
 		Aluno aluno1 = new Aluno(); 
 
 		aluno1.setNome(nome);
@@ -32,15 +31,11 @@ public class PrimeiraClasseJava {
 		aluno1.setNota3(Double.parseDouble(nota3));
 		aluno1.setNota4(Double.parseDouble(nota4));
 		aluno1.setNomeEscola(nomeEscola);
+
 		
-		System.out.println("Aluno 1: "+ aluno1.getNome());
-		System.out.println("Aluno 1: "+ aluno1.getIdade());
-		System.out.println("Aluno 1: "+ aluno1.getDataNascimento());
-		System.out.println("Aluno 1: Média da nota: "+ aluno1.getMediaNota());
-		System.out.println("Aluno 1: Resultado: "+ (aluno1.getSituacaoAluno()? "Aprovado" : "Reprovado"));
-		System.out.println("Aluno 1: "+ aluno1.getNomeEscola() + "\n\n\n");
-		
-		
+		System.out.println(aluno1.toString());
+		System.out.println("Media: "+ aluno1.getMediaNota());
+		System.out.println("Resultado: "+(aluno1.getSituacaoAluno()? "Aprovado" : "Reprovado"));
 		
 	}
 }

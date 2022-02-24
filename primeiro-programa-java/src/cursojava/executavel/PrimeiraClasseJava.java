@@ -7,7 +7,6 @@ import curdojava.classes.Disciplina;
 
 public class PrimeiraClasseJava {
 
-	@SuppressWarnings("unlikely-arg-type")
 	public static void main(String[] args) {
 		
 		
@@ -48,15 +47,27 @@ public class PrimeiraClasseJava {
 			aluno1.getDisciplinas().add(disciplina);
 		}
 		
+		
 		int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina?");
 		
 		if(escolha == 0) {
-			String disciplinaRemover = JOptionPane.showInputDialog("Qual disciplina deseja remover, 1, 2, 3 ou 4?");
-			aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() -1);
+			
+			int continuarRemover = 0;
+			int posicao = 1;
+			
+			while(continuarRemover == 0) {
+				String disciplinaRemover = JOptionPane.showInputDialog("Qual disciplina deseja remover, 1, 2, 3 ou 4?");
+				aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() -posicao);
+				posicao++;
+				continuarRemover = JOptionPane.showConfirmDialog(null, "Continuar a remover? ");
+			}
+				
+			
 		}
 		
 		
 		System.out.println(aluno1.toString());
+		System.out.println("Disciplinas e notas: " +aluno1.getDisciplinas());
 		System.out.println("Media: "+ aluno1.getMediaNota());
 		System.out.println("Resultado: "+aluno1.getSituacaoAluno2());
 		

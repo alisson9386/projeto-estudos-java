@@ -7,6 +7,7 @@ import curdojava.classes.Disciplina;
 
 public class PrimeiraClasseJava {
 
+	@SuppressWarnings("unlikely-arg-type")
 	public static void main(String[] args) {
 		
 		
@@ -46,6 +47,14 @@ public class PrimeiraClasseJava {
 			
 			aluno1.getDisciplinas().add(disciplina);
 		}
+		
+		int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina?");
+		
+		if(escolha == 0) {
+			String disciplinaRemover = JOptionPane.showInputDialog("Qual disciplina deseja remover, 1, 2, 3 ou 4?");
+			aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() -1);
+		}
+		
 
 		
 		System.out.println(aluno1.toString());

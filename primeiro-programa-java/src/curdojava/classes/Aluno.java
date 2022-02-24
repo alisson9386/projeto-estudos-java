@@ -3,6 +3,8 @@ package curdojava.classes;
 import java.util.ArrayList;
 import java.util.List;
 
+import cursojava.constantes.StatusAluno;
+
 public class Aluno {
 
 	/* Atributos do aluno */
@@ -64,12 +66,12 @@ public class Aluno {
 		double media = this.getMediaNota();
 		if(media >= 50) {
 			if(media >= 70) {
-				return "Aprovado";
+				return StatusAluno.APROVADO;
 			}else {
-				return "Aluno em recuperação";
+				return StatusAluno.RECUPERACAO;
 			}
 		}else {
-			return "Reprovado";
+			return StatusAluno.REPROVADO;
 		}
 	}
 	

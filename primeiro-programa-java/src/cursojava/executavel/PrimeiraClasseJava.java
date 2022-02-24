@@ -14,6 +14,11 @@ public class PrimeiraClasseJava {
 
 	public static void main(String[] args) {
 		
+		String usuario = JOptionPane.showInputDialog("Digite seu usuario");
+		String senha = JOptionPane.showInputDialog("Digite sua senha");
+		
+		if(usuario.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("admin")) {
+		
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
 		/*HashMap é uma lista que tem dentro uma chave que identifica uma sequencia de valores*/
@@ -119,5 +124,7 @@ public class PrimeiraClasseJava {
 			
 		}
 		
+
+		}
 	}
 }

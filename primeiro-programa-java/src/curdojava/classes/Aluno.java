@@ -41,7 +41,14 @@ public class Aluno {
 	}
 	
 	public double getMediaNota() {
-		return 0;
+		
+		double somaNota = 0.0;
+		
+		for(Disciplina disciplina : disciplinas) {
+			somaNota += disciplina.getNota();
+		}
+		
+		return somaNota / disciplinas.size();
 	}
 	
 	public boolean getSituacaoAluno() {

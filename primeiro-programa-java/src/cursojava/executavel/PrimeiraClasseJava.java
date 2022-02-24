@@ -3,6 +3,7 @@ package cursojava.executavel;
 import javax.swing.JOptionPane;
 
 import curdojava.classes.Aluno;
+import curdojava.classes.Disciplina;
 
 public class PrimeiraClasseJava {
 
@@ -19,14 +20,8 @@ public class PrimeiraClasseJava {
 		String dataMatricula = JOptionPane.showInputDialog("Data de matricula do aluno");
 		String nomeEscola = JOptionPane.showInputDialog("Nome da escola");
 		String serie = JOptionPane.showInputDialog("Série do aluno");
-		String disciplina1 = JOptionPane.showInputDialog("Qual a 1° disciplina");
-		String nota1 = JOptionPane.showInputDialog("1° nota");
-		String disciplina2 = JOptionPane.showInputDialog("Qual a 2° disciplina");
-		String nota2 = JOptionPane.showInputDialog("2° nota");
-		String disciplina3 = JOptionPane.showInputDialog("Qual a 3° disciplina");
-		String nota3 = JOptionPane.showInputDialog("3° nota");
-		String disciplina4 = JOptionPane.showInputDialog("Qual a 4° disciplina");
-		String nota4 = JOptionPane.showInputDialog("4° nota");
+		
+		
 		
 		Aluno aluno1 = new Aluno(); 
 
@@ -42,6 +37,26 @@ public class PrimeiraClasseJava {
 		aluno1.setSerieMatriculado(serie);
 		
 		
+		Disciplina disciplina1 = new Disciplina();
+		disciplina1.setDisciplina("Banco de dados");
+		disciplina1.setNota(90);
+		
+		Disciplina disciplina2 = new Disciplina();
+		disciplina2.setDisciplina("Matematica");
+		disciplina2.setNota(90);
+		
+		Disciplina disciplina3 = new Disciplina();
+		disciplina3.setDisciplina("Geografia");
+		disciplina3.setNota(90);
+		
+		Disciplina disciplina4 = new Disciplina();
+		disciplina4.setDisciplina("Historia");
+		disciplina4.setNota(90);
+		
+		aluno1.getDisciplinas().add(disciplina1);
+		aluno1.getDisciplinas().add(disciplina2);
+		aluno1.getDisciplinas().add(disciplina3);
+		aluno1.getDisciplinas().add(disciplina4);
 
 		
 		System.out.println(aluno1.toString());

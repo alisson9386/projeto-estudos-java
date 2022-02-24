@@ -1,5 +1,8 @@
 package cursojava.executavel;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.JOptionPane;
 
 import curdojava.classes.Aluno;
@@ -9,6 +12,9 @@ public class PrimeiraClasseJava {
 
 	public static void main(String[] args) {
 		
+		List<Aluno> alunos = new ArrayList<Aluno>();
+		
+		for(int qtd = 0; qtd <= 1; qtd++) {
 		
 		String nome = JOptionPane.showInputDialog("Qual o nome do aluno?");
 		/*String idade = JOptionPane.showInputDialog("Qual a idade do aluno?");
@@ -64,12 +70,21 @@ public class PrimeiraClasseJava {
 				
 			
 		}
+		alunos.add(aluno1);
+		}
+		
+		for (Aluno aluno : alunos) {
+			System.out.println(aluno.toString());
+			System.out.println("Disciplinas e notas: " +aluno.getDisciplinas());
+			System.out.println("Media: "+ aluno.getMediaNota());
+			System.out.println("Resultado: "+aluno.getSituacaoAluno2());
+			System.out.println("----------------------------------------------------------");
+		}
 		
 		
-		System.out.println(aluno1.toString());
-		System.out.println("Disciplinas e notas: " +aluno1.getDisciplinas());
-		System.out.println("Media: "+ aluno1.getMediaNota());
-		System.out.println("Resultado: "+aluno1.getSituacaoAluno2());
+		
+		
+		
 		
 		
 		

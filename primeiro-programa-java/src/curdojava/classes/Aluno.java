@@ -17,7 +17,7 @@ public class Aluno {
 	private String nomeEscola;
 	private String serieMatriculado;
 	
-	private List<Disciplina> disciplinas = new ArrayList();
+	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 	
 	public void setDisciplinas(List<Disciplina> disciplinas) {
 		this.disciplinas = disciplinas;
@@ -57,6 +57,19 @@ public class Aluno {
 			return true;
 		}else {
 			return false;
+		}
+	}
+	
+	public String getSituacaoAluno2() {
+		double media = this.getMediaNota();
+		if(media >= 50) {
+			if(media >= 70) {
+				return "Aprovado";
+			}else {
+				return "Aluno em recuperação";
+			}
+		}else {
+			return "Reprovado";
 		}
 	}
 	

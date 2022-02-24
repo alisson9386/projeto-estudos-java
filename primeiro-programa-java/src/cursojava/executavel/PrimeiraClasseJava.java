@@ -12,7 +12,7 @@ public class PrimeiraClasseJava {
 		
 		
 		String nome = JOptionPane.showInputDialog("Qual o nome do aluno?");
-		String idade = JOptionPane.showInputDialog("Qual a idade do aluno?");
+		/*String idade = JOptionPane.showInputDialog("Qual a idade do aluno?");
 		String dataNascimento = JOptionPane.showInputDialog("Qual a data de nascimento do aluno?");
 		String registroGeral = JOptionPane.showInputDialog("Qual o RG do aluno?");
 		String numeroCpf = JOptionPane.showInputDialog("Qual o CPF do aluno?");
@@ -20,14 +20,14 @@ public class PrimeiraClasseJava {
 		String nomePai = JOptionPane.showInputDialog("Qual o nome do pai do aluno?");
 		String dataMatricula = JOptionPane.showInputDialog("Data de matricula do aluno");
 		String nomeEscola = JOptionPane.showInputDialog("Nome da escola");
-		String serie = JOptionPane.showInputDialog("Série do aluno");
+		String serie = JOptionPane.showInputDialog("Série do aluno");*/
 		
 		
 		
 		Aluno aluno1 = new Aluno(); 
 
 		aluno1.setNome(nome);
-		aluno1.setIdade(Integer.valueOf(idade));
+		/*aluno1.setIdade(Integer.valueOf(idade));
 		aluno1.setDataNascimento(dataNascimento);
 		aluno1.setRegistroGeral(registroGeral);
 		aluno1.setNumeroCpf(numeroCpf);
@@ -35,7 +35,7 @@ public class PrimeiraClasseJava {
 		aluno1.setNomePai(nomePai);
 		aluno1.setDataMatricula(dataMatricula);
 		aluno1.setNomeEscola(nomeEscola);
-		aluno1.setSerieMatriculado(serie);
+		aluno1.setSerieMatriculado(serie);*/
 		
 		for(int pos = 1; pos <= 4 ; pos++) {
 			String nomeDisciplina = JOptionPane.showInputDialog("Nome da disciplina "+ pos+" ?");
@@ -55,11 +55,10 @@ public class PrimeiraClasseJava {
 			aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() -1);
 		}
 		
-
 		
 		System.out.println(aluno1.toString());
 		System.out.println("Media: "+ aluno1.getMediaNota());
-		System.out.println("Resultado: "+(aluno1.getSituacaoAluno()? "Aprovado" : "Reprovado"));
+		System.out.println("Resultado: "+aluno1.getSituacaoAluno2());
 		
 		
 		

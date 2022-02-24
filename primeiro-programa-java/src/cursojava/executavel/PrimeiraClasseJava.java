@@ -14,7 +14,7 @@ public class PrimeiraClasseJava {
 		
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
-		for(int qtd = 0; qtd <= 1; qtd++) {
+		for(int qtd = 1; qtd <= 2; qtd++) {
 		
 		String nome = JOptionPane.showInputDialog("Qual o nome do aluno?");
 		/*String idade = JOptionPane.showInputDialog("Qual a idade do aluno?");
@@ -73,35 +73,18 @@ public class PrimeiraClasseJava {
 		alunos.add(aluno1);
 		}
 		
-		for (Aluno aluno : alunos) {
+		for(int pos = 0; pos < alunos.size(); pos++) {
+		Aluno aluno = alunos.get(pos);
+		System.out.println("Aluno = " + aluno.getNome());
+		System.out.println("Média do aluno = " + aluno.getMediaNota());
+		System.out.println("Resultado = " + aluno.getSituacaoAluno2() + "\n");
+		
+		for (int posd = 0; posd < aluno.getDisciplinas().size(); posd++) {
+			Disciplina disc = aluno.getDisciplinas().get(posd);
+			System.out.println("Materia: " + disc.getDisciplina() + " - Nota: " + disc.getNota());
 			
-			if(aluno.getNome().equalsIgnoreCase("Alisson")) {
-				alunos.remove(aluno);
-			break;
-			}else {
-				System.out.println(aluno);
-				System.out.println("Disciplinas e notas: " +aluno.getDisciplinas());
-				System.out.println("Media: "+ aluno.getMediaNota());
-				System.out.println("Resultado: "+aluno.getSituacaoAluno2());
-				System.out.println("----------------------------------------------------------");
-			}
 		}
-		
-		for (Aluno aluno : alunos) {
-			System.out.println("Alunos que sobraram na lista");
-			System.out.println(aluno.getNome());
-			System.out.println("Suas materias sao");
-			for(Disciplina disciplina : aluno.getDisciplinas()) {
-				System.out.println(disciplina.getDisciplina());
-			}
+		System.out.println("----------------------------------------------------");
 		}
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 }

@@ -2,7 +2,6 @@ package cursojava.executavel;
 
 import curdojava.classes.Aluno;
 import curdojava.classes.Diretor;
-import curdojava.classes.Pessoa;
 import curdojava.classes.Secretario;
 
 public class TestandoClassesFilhas {
@@ -26,11 +25,11 @@ public class TestandoClassesFilhas {
 		System.out.println(diretor.pessoaMaiorIdade());
 		System.out.println(secretario.pessoaMaiorIdade());
 		
-		System.out.println("Aluno: " + aluno.getNome() + " " + aluno.mensagemMaiorIdade());
+		System.out.println("Aluno: " + aluno.getNome() + " \nSituação: " + aluno.mensagemMaiorIdade() + "  \nSalario: " + aluno.salario());
 		System.out.println("Diretor: " + diretor.getNome() );
 		System.out.println("Secretario: " + secretario.getNome() );
 		
-		Pessoa pessoa = new Pessoa();
+		
 		
 		
 	}

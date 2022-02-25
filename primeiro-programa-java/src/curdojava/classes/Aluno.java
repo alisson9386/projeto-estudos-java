@@ -5,16 +5,8 @@ import java.util.List;
 
 import cursojava.constantes.StatusAluno;
 
-public class Aluno {
+public class Aluno extends Pessoa {
 
-	/* Atributos do aluno */
-	private String nome;
-	private Integer idade;
-	private String dataNascimento;
-	private String registroGeral;
-	private String numeroCpf;
-	private String nomeMae;
-	private String nomePai;
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
@@ -34,12 +26,12 @@ public class Aluno {
 	}
 
 	public Aluno(String nomePadrao) {
-		nome = nomePadrao;
+		super.nome = nomePadrao;
 	}
 
 	public Aluno(String nomePadrao, Integer idadePadrao) {
-		nome = nomePadrao;
-		idade = idadePadrao;
+		super.nome = nomePadrao;
+		super.idade = idadePadrao;
 	}
 	
 	public double getMediaNota() {

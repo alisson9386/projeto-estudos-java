@@ -159,11 +159,13 @@ public class Aluno extends Pessoa { /*Classe filha*/
 				+ serieMatriculado + "]";
 	}
 	
-	@Override /*Identifica método sobrescrito*/
-		public boolean pessoaMaiorIdade() {
-			// TODO Auto-generated method stub
-			return idade >= 18;
-		}
+	@Override
+	public boolean pessoaMaiorIdade() { /*Identifica método sobrescrito*/
+		// TODO Auto-generated method stub
+		return super.pessoaMaiorIdade();
+	}
+	
+	
 	
 	public String mensagemMaiorIdade() {
 		return this.pessoaMaiorIdade() ? "Aluno maior de idade" : "Alunor menor de idade";

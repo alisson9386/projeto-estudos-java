@@ -151,11 +151,22 @@ public class Aluno extends Pessoa { /*Classe filha*/
 		this.serieMatriculado = serieMatriculado;
 	}
 
+	@Override
 	public String toString() {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
 				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
 				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
 				+ serieMatriculado + "]";
+	}
+	
+	@Override /*Identifica método sobrescrito*/
+		public boolean pessoaMaiorIdade() {
+			// TODO Auto-generated method stub
+			return idade >= 18;
+		}
+	
+	public String mensagemMaiorIdade() {
+		return this.pessoaMaiorIdade() ? "Aluno maior de idade" : "Alunor menor de idade";
 	}
 
 }

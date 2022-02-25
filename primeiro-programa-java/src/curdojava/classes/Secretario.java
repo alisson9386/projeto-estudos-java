@@ -1,6 +1,6 @@
 package curdojava.classes;
 
-public class Secretario extends Pessoa {
+public class Secretario extends Pessoa {/*Classe filha*/
 	
 	private String registro;
 	private String nivelCargo;
@@ -25,6 +25,10 @@ public class Secretario extends Pessoa {
 		this.experiencia = experiencia;
 	}
 	
-	
-
+	@Override
+	public String toString() {
+		return "Secretario [registro=" + registro + ", nivelCargo=" + nivelCargo + ", experiencia=" + experiencia
+				+ ", nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
+				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + "]";
+	}
 }

@@ -1,5 +1,6 @@
 package curdojava.classes;
 
+/*SUPERCLASSE (Atributos comuns a todos os objetos filhos)*/
 public class Pessoa {
 	
 	protected String nome;

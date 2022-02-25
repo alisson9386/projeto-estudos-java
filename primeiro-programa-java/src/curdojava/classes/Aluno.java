@@ -5,7 +5,7 @@ import java.util.List;
 
 import cursojava.constantes.StatusAluno;
 
-public class Aluno extends Pessoa {
+public class Aluno extends Pessoa { /*Classe filha*/
 
 	private String dataMatricula;
 	private String nomeEscola;

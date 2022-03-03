@@ -7,8 +7,10 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import cursojava.classes.Aluno;
+import cursojava.classes.Diretor;
 import cursojava.classes.Disciplina;
 import cursojava.classes.Secretario;
+import cursojava.classesauxiliares.FuncaoAutenticacao;
 import cursojava.constantes.StatusAluno;
 import cursojava.interfaces.PermitirAcesso;
 
@@ -16,13 +18,11 @@ public class PrimeiraClasseJava {
 
 	public static void main(String[] args) {
 		
-		String usuario = JOptionPane.showInputDialog("Digite seu usuario");
-		String senha = JOptionPane.showInputDialog("Digite sua senha");	
+		String login = JOptionPane.showInputDialog("Digite seu login");
+		String senha = JOptionPane.showInputDialog("Digite sua senha");
 		
-		PermitirAcesso permitirAcesso = new Secretario(usuario, senha);
-		
-		if(permitirAcesso.autenticar()) {
-		
+		if(new FuncaoAutenticacao(new Diretor(login, senha)).autenticar()) { /* Vou travar o contrato para autorizar somente quem realmente tem o contrato 100% legítimo*/
+		//if(new FuncaoAutenticacao(new Secretario(login, senha)).autenticar()) {
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
 		/*HashMap é uma lista que tem dentro uma chave que identifica uma sequencia de valores*/

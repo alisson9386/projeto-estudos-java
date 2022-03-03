@@ -58,7 +58,7 @@ public class Secretario extends Pessoa implements PermitirAcesso {/*Classe filha
 	}
 	
 	public boolean autenticar() {
-		return login.equals("admin") && senha.equals("admin");
+		return login.equals("secretario") && senha.equals("secretario");
 	}
 
 	

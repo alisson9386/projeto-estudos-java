@@ -1,4 +1,4 @@
-package curdojava.classes;
+package cursojava.classes;
 
 public class Disciplina {
 	

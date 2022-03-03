@@ -6,8 +6,8 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import curdojava.classes.Aluno;
-import curdojava.classes.Disciplina;
+import cursojava.classes.Aluno;
+import cursojava.classes.Disciplina;
 import cursojava.constantes.StatusAluno;
 
 public class PrimeiraClasseJava {

@@ -1,9 +1,9 @@
 package cursojava.executavel;
 
-import curdojava.classes.Aluno;
-import curdojava.classes.Diretor;
-import curdojava.classes.Pessoa;
-import curdojava.classes.Secretario;
+import cursojava.classes.Aluno;
+import cursojava.classes.Diretor;
+import cursojava.classes.Pessoa;
+import cursojava.classes.Secretario;
 
 public class TestandoClassesFilhas {
 	

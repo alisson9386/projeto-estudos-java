@@ -1,4 +1,4 @@
-package curdojava.classes;
+package cursojava.classes;
 
 /*SUPERCLASSE (Atributos comuns a todos os objetos filhos)*/
 public abstract class Pessoa {

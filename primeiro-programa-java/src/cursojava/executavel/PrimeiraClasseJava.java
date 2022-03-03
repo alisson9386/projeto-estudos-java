@@ -17,10 +17,11 @@ public class PrimeiraClasseJava {
 	public static void main(String[] args) {
 		
 		String usuario = JOptionPane.showInputDialog("Digite seu usuario");
-		String senha = JOptionPane.showInputDialog("Digite sua senha");		
+		String senha = JOptionPane.showInputDialog("Digite sua senha");	
 		
+		PermitirAcesso permitirAcesso = new Secretario(usuario, senha);
 		
-		if(new Secretario().autenticar(usuario, senha)) {
+		if(permitirAcesso.autenticar()) {
 		
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		

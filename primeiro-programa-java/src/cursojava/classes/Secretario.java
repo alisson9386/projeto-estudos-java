@@ -1,11 +1,29 @@
-package curdojava.classes;
+package cursojava.classes;
 
-public class Secretario extends Pessoa {/*Classe filha*/
+import cursojava.interfaces.PermitirAcesso;
+
+public class Secretario extends Pessoa implements PermitirAcesso {/*Classe filha*/
 	
 	private String registro;
 	private String nivelCargo;
 	private String experiencia;
 	
+	private String login;
+	private String senha;
+	
+	
+	public String getLogin() {
+		return login;
+	}
+	public void setLogin(String login) {
+		this.login = login;
+	}
+	public String getSenha() {
+		return senha;
+	}
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 	public String getRegistro() {
 		return registro;
 	}
@@ -37,4 +55,11 @@ public class Secretario extends Pessoa {/*Classe filha*/
 		// TODO Auto-generated method stub
 		return 1800 * 0.9;
 	}
+	
+	public boolean autenticar() {
+		
+		return login.equals("admin") && senha.equals("admin");
+	}
+	
+	
 }

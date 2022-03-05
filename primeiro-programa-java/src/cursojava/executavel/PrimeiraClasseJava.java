@@ -24,7 +24,7 @@ public class PrimeiraClasseJava {
 			
 			if(new FuncaoAutenticacao(new Diretor(login, senha)).autenticar()) { /* Vou travar o contrato para autorizar somente quem realmente tem o contrato 100% legítimo*/
 			//if(new FuncaoAutenticacao(new Secretario(login, senha)).autenticar()) {
-			List<Aluno> alunos = null;
+			List<Aluno> alunos = new ArrayList<Aluno>();
 			
 			/*HashMap é uma lista que tem dentro uma chave que identifica uma sequencia de valores*/
 			HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
@@ -71,9 +71,9 @@ public class PrimeiraClasseJava {
 			}
 			
 			
-			//int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina?");
+			int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina?");
 			
-			/*if(escolha == 0) {
+			if(escolha == 0) {
 				
 				int continuarRemover = 0;
 				int posicao = 1;
@@ -86,8 +86,7 @@ public class PrimeiraClasseJava {
 				}
 					
 				
-			}*/
-			System.out.println("Erro aqui");
+			}
 			alunos.add(aluno1);
 			}
 			
@@ -136,8 +135,27 @@ public class PrimeiraClasseJava {
 			}
 			
 		}catch (Exception e) {
+			
+			StringBuilder saida = new StringBuilder();
+				
+				/*Imprime o erro no log*/
 				e.printStackTrace();
-				JOptionPane.showMessageDialog(null, "Erro ao processar notas");
+				
+				/*Mensagem do erro ou causa*/
+				System.out.println("Mensagem: " + e.getMessage());
+				
+				for(int i= 0; i < e.getStackTrace().length; i++){
+					
+					saida.append("\nClasse de erro: " + e.getStackTrace()[i].getClassName());
+					saida.append("\nMetodo de erro: " + e.getStackTrace()[i].getMethodName());
+					saida.append("\nLinha de erro: " + e.getStackTrace()[i].getLineNumber());
+					saida.append("\nClasse do erro: " + e.getClass().getName()
+							);
+				}
+				
+				
+				
+				JOptionPane.showMessageDialog(null, "Erro ao processar notas " + saida.toString());
 		}
 		
 		

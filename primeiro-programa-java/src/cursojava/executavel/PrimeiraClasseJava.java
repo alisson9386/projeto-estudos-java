@@ -37,7 +37,7 @@ public class PrimeiraClasseJava {
 
 			
 			
-			for(int qtd = 1; qtd <= 2; qtd++) {
+			for(int qtd = 1; qtd <= 1; qtd++) {
 			
 			String nome = JOptionPane.showInputDialog("Qual o nome do aluno?");
 			String idade = JOptionPane.showInputDialog("Qual a idade do aluno?");
@@ -174,6 +174,8 @@ public class PrimeiraClasseJava {
 			e.printStackTrace();
 			JOptionPane.showMessageDialog(null, "Erro inesperado: " + e.getClass().getName());
 			
+		}finally {/* Sempre é executado ocorrendo erros ou nao, é nexessário para quando for necessário rodar um processo independente de erro ou nao*/
+			JOptionPane.showMessageDialog(null, "Obrigado por aprender comigo");
 		}
 		
 		

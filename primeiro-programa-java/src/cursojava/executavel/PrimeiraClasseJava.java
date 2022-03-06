@@ -1,44 +1,27 @@
 package cursojava.executavel;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Scanner;
-
 import javax.swing.JOptionPane;
 
 import cursojava.classes.Aluno;
 import cursojava.classes.Diretor;
 import cursojava.classes.Disciplina;
-import cursojava.classes.Secretario;
 import cursojava.classesauxiliares.FuncaoAutenticacao;
 import cursojava.constantes.StatusAluno;
-import cursojava.excecao.ExcecaoProcessarNota;
-import cursojava.interfaces.PermitirAcesso;
 
 public class PrimeiraClasseJava {
 
 	public static void main(String[] args) {
 		
 		
-		try {
-			lerArquivo();
-			
-			/*try {
-				File file = new File("arquivo.txt");
-				Scanner scanner = new Scanner(file);
-			} catch (FileNotFoundException e) {
-				throw new ExcecaoProcessarNota(e.getMessage());
-			}*/
-			
-			
+		try {		
 			
 			String login = JOptionPane.showInputDialog("Digite seu login");
 			String senha = JOptionPane.showInputDialog("Digite sua senha");
 			
-			if(new FuncaoAutenticacao(new Diretor(login, senha)).autenticar()) { /* Vou travar o contrato para autorizar somente quem realmente tem o contrato 100% legítimo*/
+ 			if(new FuncaoAutenticacao(new Diretor(login, senha)).autenticar()) { /* Vou travar o contrato para autorizar somente quem realmente tem o contrato 100% legítimo*/
 			//if(new FuncaoAutenticacao(new Secretario(login, senha)).autenticar()) {
 			List<Aluno> alunos = new ArrayList<Aluno>();
 			
@@ -169,23 +152,9 @@ public class PrimeiraClasseJava {
 					saida.append("\nClasse do erro: " + e.getClass().getName()
 							);
 				}
-				
-				
-				
 				JOptionPane.showMessageDialog(null, "Erro de conversão de numero " + saida.toString());
 				
-
-
-		}finally {/* Sempre é executado ocorrendo erros ou nao, é nexessário para quando for necessário rodar um processo independente de erro ou nao*/
-			JOptionPane.showMessageDialog(null, "Obrigado por aprender comigo");
 		}
-		
-	}
-	
-	public static void lerArquivo() throws FileNotFoundException {
-		
-			File file = new File("arquivo.txt");
-			Scanner scanner = new Scanner(file);
 		
 	}
 }

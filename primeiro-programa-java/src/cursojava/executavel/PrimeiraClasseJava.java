@@ -151,7 +151,7 @@ public class PrimeiraClasseJava {
 			}
 			
 			/*Exceção de formatação de numero*/
-		}catch (NumberFormatException e) {
+		}catch (Exception e) {
 			
 			StringBuilder saida = new StringBuilder();
 				
@@ -174,32 +174,18 @@ public class PrimeiraClasseJava {
 				
 				JOptionPane.showMessageDialog(null, "Erro de conversão de numero " + saida.toString());
 				
-				/*Exceção de null pointer*/
-		}catch (NullPointerException n) {
-				JOptionPane.showMessageDialog(null, "Problema de null pointer: " + n.getClass());
-				
-				
-				/*Exceção genérica*/
-		}catch (ExcecaoProcessarNota e) {
-			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, "Erro da excecao customizada: " + e.getClass().getName());
-			
+
+
 		}finally {/* Sempre é executado ocorrendo erros ou nao, é nexessário para quando for necessário rodar um processo independente de erro ou nao*/
 			JOptionPane.showMessageDialog(null, "Obrigado por aprender comigo");
 		}
 		
-		
-		
-		
-		
 	}
 	
-	public static void lerArquivo() throws ExcecaoProcessarNota {
-		try {
+	public static void lerArquivo() throws FileNotFoundException {
+		
 			File file = new File("arquivo.txt");
 			Scanner scanner = new Scanner(file);
-		} catch (FileNotFoundException e) {
-			throw new ExcecaoProcessarNota(e.getMessage());
-		}
+		
 	}
 }

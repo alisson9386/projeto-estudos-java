@@ -70,6 +70,6 @@ public class Diretor extends Pessoa implements PermitirAcesso{ /*Classe filha*/
 	}
 	
 	public boolean autenticar() {
-		return login.equals("diretor") && senha.equals("diretor");
+		return login.equals("alisson") && senha.equals("123");
 	}
 }

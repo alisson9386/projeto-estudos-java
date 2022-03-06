@@ -1,5 +1,6 @@
 package cursojava.executavel;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,6 +20,8 @@ public class PrimeiraClasseJava {
 	public static void main(String[] args) {
 		
 		try {
+			
+			
 			String login = JOptionPane.showInputDialog("Digite seu login");
 			String senha = JOptionPane.showInputDialog("Digite sua senha");
 			
@@ -31,11 +34,11 @@ public class PrimeiraClasseJava {
 
 			
 			
-			for(int qtd = 1; qtd <= 3; qtd++) {
+			for(int qtd = 1; qtd <= 2; qtd++) {
 			
 			String nome = JOptionPane.showInputDialog("Qual o nome do aluno?");
-			/*String idade = JOptionPane.showInputDialog("Qual a idade do aluno?");
-			String dataNascimento = JOptionPane.showInputDialog("Qual a data de nascimento do aluno?");
+			String idade = JOptionPane.showInputDialog("Qual a idade do aluno?");
+			/*String dataNascimento = JOptionPane.showInputDialog("Qual a data de nascimento do aluno?");
 			String registroGeral = JOptionPane.showInputDialog("Qual o RG do aluno?");
 			String numeroCpf = JOptionPane.showInputDialog("Qual o CPF do aluno?");
 			String nomeMae = JOptionPane.showInputDialog("Qual o nome da mãe do aluno?");
@@ -49,8 +52,8 @@ public class PrimeiraClasseJava {
 			Aluno aluno1 = new Aluno(); 
 
 			aluno1.setNome(nome);
-			/*aluno1.setIdade(Integer.valueOf(idade));
-			aluno1.setDataNascimento(dataNascimento);
+			aluno1.setIdade(Integer.valueOf(idade));
+			/*aluno1.setDataNascimento(dataNascimento);
 			aluno1.setRegistroGeral(registroGeral);
 			aluno1.setNumeroCpf(numeroCpf);
 			aluno1.setNomeMae(nomeMae);
@@ -134,7 +137,8 @@ public class PrimeiraClasseJava {
 				JOptionPane.showMessageDialog(null, "Acesso Negado!");
 			}
 			
-		}catch (Exception e) {
+			/*Exceção de formatação de numero*/
+		}catch (NumberFormatException e) {
 			
 			StringBuilder saida = new StringBuilder();
 				
@@ -155,7 +159,15 @@ public class PrimeiraClasseJava {
 				
 				
 				
-				JOptionPane.showMessageDialog(null, "Erro ao processar notas " + saida.toString());
+				JOptionPane.showMessageDialog(null, "Erro de conversão de numero " + saida.toString());
+				
+				/*Exceção de null pointer*/
+		}catch (NullPointerException n) {
+				JOptionPane.showMessageDialog(null, "Problema de null pointer: " + n.getClass());
+				
+				/*Exceção genérica*/
+		}catch (Exception e) {
+			e.printStackTrace();
 		}
 		
 		

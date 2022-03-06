@@ -1,6 +1,7 @@
 package cursojava.executavel;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,16 +15,25 @@ import cursojava.classes.Disciplina;
 import cursojava.classes.Secretario;
 import cursojava.classesauxiliares.FuncaoAutenticacao;
 import cursojava.constantes.StatusAluno;
+import cursojava.excecao.ExcecaoProcessarNota;
 import cursojava.interfaces.PermitirAcesso;
 
 public class PrimeiraClasseJava {
 
 	public static void main(String[] args) {
 		
+		
 		try {
+			lerArquivo();
 			
-			File file = new File("c://arquivo.txt");
-			Scanner scanner = new Scanner(file);
+			/*try {
+				File file = new File("arquivo.txt");
+				Scanner scanner = new Scanner(file);
+			} catch (FileNotFoundException e) {
+				throw new ExcecaoProcessarNota(e.getMessage());
+			}*/
+			
+			
 			
 			String login = JOptionPane.showInputDialog("Digite seu login");
 			String senha = JOptionPane.showInputDialog("Digite sua senha");
@@ -170,9 +180,9 @@ public class PrimeiraClasseJava {
 				
 				
 				/*Exceção genérica*/
-		}catch (Exception e) {
+		}catch (ExcecaoProcessarNota e) {
 			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, "Erro inesperado: " + e.getClass().getName());
+			JOptionPane.showMessageDialog(null, "Erro da excecao customizada: " + e.getClass().getName());
 			
 		}finally {/* Sempre é executado ocorrendo erros ou nao, é nexessário para quando for necessário rodar um processo independente de erro ou nao*/
 			JOptionPane.showMessageDialog(null, "Obrigado por aprender comigo");
@@ -181,5 +191,15 @@ public class PrimeiraClasseJava {
 		
 		
 		
+		
+	}
+	
+	public static void lerArquivo() throws ExcecaoProcessarNota {
+		try {
+			File file = new File("arquivo.txt");
+			Scanner scanner = new Scanner(file);
+		} catch (FileNotFoundException e) {
+			throw new ExcecaoProcessarNota(e.getMessage());
+		}
 	}
 }

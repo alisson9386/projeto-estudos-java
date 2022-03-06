@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
@@ -21,6 +22,8 @@ public class PrimeiraClasseJava {
 		
 		try {
 			
+			File file = new File("c://arquivo.txt");
+			Scanner scanner = new Scanner(file);
 			
 			String login = JOptionPane.showInputDialog("Digite seu login");
 			String senha = JOptionPane.showInputDialog("Digite sua senha");
@@ -165,10 +168,15 @@ public class PrimeiraClasseJava {
 		}catch (NullPointerException n) {
 				JOptionPane.showMessageDialog(null, "Problema de null pointer: " + n.getClass());
 				
+				
 				/*Exceção genérica*/
 		}catch (Exception e) {
 			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, "Erro inesperado: " + e.getClass().getName());
+			
 		}
+		
+		
 		
 		
 	}

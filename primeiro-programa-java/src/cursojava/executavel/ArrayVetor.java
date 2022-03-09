@@ -1,17 +1,32 @@
 package cursojava.executavel;
 
+import cursojava.classes.Aluno;
+import cursojava.classes.Disciplina;
+
 public class ArrayVetor {
 	
 	public static void main(String[] args) {
 		
+		double[] notas1 = {8.8,7.9,4.5,8.1};
+		double[] notas2 = {9.8,8.7,7.4,9.9};
 		
-		String[] valores = {"Alisson","98.5", "Curso Java", "alissondeives70@gmail.com"};
+		Aluno aluno = new Aluno();
 		
-		float[] valorFloat = new float[4];
+		aluno.setNome("Alisson");
+		aluno.setNomeEscola("Promove");
 		
-		for(int i = 0; i < valores.length; i++ ) {
-			System.out.println("Valor na posição " + (i + 1) + ": "+ valores[i]);
-		}
+		Disciplina disciplina = new Disciplina();
+		disciplina.setDisciplina("Java");
+		disciplina.setNota(notas1);
+		
+		aluno.getDisciplinas().add(disciplina);
+		
+		Disciplina disciplina2 = new Disciplina();
+		disciplina2.setDisciplina("SQL");
+		disciplina2.setNota(notas2);
+		
+		aluno.getDisciplinas().add(disciplina2);
+		
 	}
 
 }

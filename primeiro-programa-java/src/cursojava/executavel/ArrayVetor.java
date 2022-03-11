@@ -27,39 +27,28 @@ public class ArrayVetor {
 
 		aluno.getDisciplinas().add(disciplina2);
 
-		System.out.println("Nome do aluno: " + aluno.getNome() + " do cruso " + aluno.getNomeEscola());
-		System.out.println("-------------------- Disciplinas do aluno --------------------");
-
-		for (Disciplina disc : aluno.getDisciplinas()) {
-
-			System.out.println("\nDisciplina: " + disc.getDisciplina());
-			System.out.println("Notas da disciplina: ");
-
-			double notaMaior = 0.0;
-			double notaMenor = 0.0;
-			for (int pos = 0; pos < disc.getNota().length; pos++) {
-
-				int sit = pos + 1;
-				System.out.println("Nota " + sit + ": " + disc.getNota()[pos]);
+		//----------------------------------------------//
+		
+		Aluno[] arrayAlunos = new Aluno[1];
+		
+		arrayAlunos[0] = aluno;
+		
+		for(int i = 0; i < arrayAlunos.length; i++) {
+			
+			System.out.println("Nome do aluno: " + arrayAlunos[i].getNome());
+			
+			for(Disciplina d : arrayAlunos[i].getDisciplinas()) {
 				
-				if(pos == 0) {
-					notaMaior = disc.getNota()[pos];
-				}else {
-					if(disc.getNota()[pos] > notaMaior) {
-						notaMaior = disc.getNota()[pos];
-					}
+				System.out.println("\nNome da disciplina: " + d.getDisciplina());
+				
+				for(int posnota = 0; posnota < d.getNota().length; posnota++) {
+					int posreal = posnota + 1;
+					System.out.println("A nota "+ posreal + " é igual a: " + d.getNota()[posnota]);
+					
 				}
 				
-				if(pos == 0) {
-					notaMenor = disc.getNota()[pos];
-				}else {
-					if(disc.getNota()[pos] < notaMenor) {
-						notaMenor = disc.getNota()[pos];
-					}
-				}
 			}
-			System.out.println("Maior nota da disciplina " + disc.getDisciplina() + " é de valor: "+ notaMaior);
-			System.out.println("Menor nota da disciplina " + disc.getDisciplina() + " é de valor: "+ notaMenor);
+			
 		}
 
 	}

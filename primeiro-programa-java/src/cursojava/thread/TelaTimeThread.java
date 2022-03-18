@@ -16,6 +16,11 @@ import java.util.Calendar;
 
 public class TelaTimeThread extends JDialog {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3919427130927404105L;
+
 	private JPanel jPanel = new JPanel(new GridBagLayout());
 	
 	private JLabel descricaoHora = new JLabel("Time da Thread 1");
@@ -116,19 +121,28 @@ public class TelaTimeThread extends JDialog {
 					thread2Time = new Thread(thread2);
 					thread2Time.start();
 					
+					jButton.setEnabled(false);
+					jButton2.setEnabled(true);
+					
 				}
 			});
 			
 			jButton2.addActionListener(new ActionListener() {
 
+				@SuppressWarnings("deprecation")
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					thread1Time.stop();
 					thread2Time.stop();
 					
+					jButton.setEnabled(true);
+					jButton2.setEnabled(false);
+					
 				}
 				
 			});
+			
+			jButton2.setEnabled(false);
 			
 			add(jPanel, BorderLayout.WEST);
 			setVisible(true); /*Torna a tela visivel para o usuario, e sempre sera o utimo comando do construtor de telas*/

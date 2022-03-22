@@ -29,7 +29,7 @@ public class TelaTimeThread extends JDialog {
 	private JLabel descricaoHora2 = new JLabel("E-mail");
 	private JTextField mostraTempo2 = new JTextField();
 	
-	private JButton jButton = new JButton("Add lista");
+	private JButton jButton = new JButton("Gerar ..");
 	private JButton jButton2 = new JButton("Stop");
 	
 	private ImplementacaoFilaThread fila = new ImplementacaoFilaThread();
@@ -78,12 +78,20 @@ public class TelaTimeThread extends JDialog {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					
+					if (fila == null) {
+						fila = new ImplementacaoFilaThread();
+						fila.start();
+					}
+					
+					for(int qtd = 0; qtd <100; qtd ++) {
+					
 					ObjetoFilaThread filaThread = new ObjetoFilaThread();
 					
 					filaThread.setNome(mostraTempo.getText());
-					filaThread.setEmail(mostraTempo2.getText());
+					filaThread.setEmail(mostraTempo2.getText() + " - " + qtd);
 					
 					fila.add(filaThread);
+					}
 					
 				}
 			});
@@ -92,6 +100,9 @@ public class TelaTimeThread extends JDialog {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
+					
+					fila.stop();
+					fila = null;
 				}
 				
 			});

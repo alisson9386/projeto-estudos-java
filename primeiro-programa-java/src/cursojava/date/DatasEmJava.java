@@ -2,29 +2,24 @@ package cursojava.date;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
 
 public class DatasEmJava {
 	
 	public static void main(String[] args) throws ParseException {
-		
-		Calendar calendar = Calendar.getInstance();
-		
-		calendar.setTime(new SimpleDateFormat("dd-MM-yyyy").parse("10-03-2022"));/*Definindo data qualquer*/
-		
-		calendar.add(Calendar.DAY_OF_MONTH, 1);
-		
-		System.out.println(new SimpleDateFormat("dd-MM-yyyy").format(calendar.getTime()));
-		
-		calendar.add(Calendar.MONTH, -12);
-		
-		System.out.println(new SimpleDateFormat("dd-MM-yyyy").format(calendar.getTime()));
-		
-		calendar.add(Calendar.YEAR, 1);
-		
-		System.out.println(new SimpleDateFormat("dd-MM-yyyy").format(calendar.getTime()));
+				
+			long dias = ChronoUnit.DAYS.between(LocalDate.parse("2022-02-01"), LocalDate.now());
 			
+			System.out.println("Possui "+dias+" dias entre a faixa de data");
+			
+			
+			long decadas = ChronoUnit.DECADES.between(LocalDate.parse("1998-02-01"), LocalDate.now());
+			
+			System.out.println("Possui "+decadas+" decadas entre a faixa de data");
+		
 		}
 		
 	}

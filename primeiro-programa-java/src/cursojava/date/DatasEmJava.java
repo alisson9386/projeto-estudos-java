@@ -2,6 +2,8 @@ package cursojava.date;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -14,22 +16,23 @@ import javax.swing.JOptionPane;
 
 public class DatasEmJava {
 	
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args) throws ParseException, InterruptedException {
 		
-		LocalDate dataAtual = LocalDate.now();
+		Instant inicio = Instant.now();
 		
-		System.out.println("Data atual: "+dataAtual.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+		Thread.sleep(2000);
 		
-		System.out.println("Dia da semana: " + dataAtual.getDayOfWeek());
+		Instant ifinal = Instant.now();
 		
-		System.out.println("Dia do mês: " + dataAtual.getDayOfMonth());
+		Duration duracao = Duration.between(inicio, ifinal);
 		
-		System.out.println("Dia do ano: " + dataAtual.getDayOfYear());
+		System.out.println("Duração em nano segundos: " + duracao.toNanos());
 		
-		System.out.println("Mês: "+ dataAtual.getMonth());
+		System.out.println("Duração em Minutos: " + duracao.toMinutes());
 		
-		System.out.println("Ano: " + dataAtual.getYear());
+		System.out.println("Duração em Horas: " + duracao.toHours());
 		
+		System.out.println("Duração em milisegundos: " + duracao.toMillis());
 		
 		
 		}

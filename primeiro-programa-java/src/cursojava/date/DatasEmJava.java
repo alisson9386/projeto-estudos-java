@@ -1,9 +1,11 @@
 package cursojava.date;
 
-import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
@@ -14,45 +16,19 @@ public class DatasEmJava {
 	
 	public static void main(String[] args) throws ParseException {
 		
-		String nome = JOptionPane.showInputDialog("Nome do cliente");
+		/*Nova API de data do Java 8 em diante*/
 		
-		String produto = JOptionPane.showInputDialog("Produto comprado");
+		LocalDate dataAtual = LocalDate.now();
 		
-		double valorProduto = Double.parseDouble(JOptionPane.showInputDialog("Valor do produto"));
+		LocalTime horaAtual = LocalTime.now();
 		
-		int parcelaDesejada = Integer.parseInt(JOptionPane.showInputDialog("Número de parcelas"));
+		LocalDateTime dataEHoraAtual = LocalDateTime.now();
 		
-		double valorParcela = valorProduto / parcelaDesejada;
+		System.out.println("Data atual: "+dataAtual.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+		System.out.println("Hora atual: "+horaAtual.format(DateTimeFormatter.ofPattern("HH:mm.ss")));
+		System.out.println("Hora e data atual: "+ dataEHoraAtual.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
 		
 		
-		
-		Date dataInicial = new SimpleDateFormat("dd-MM-yyyy").parse("30-03-2022");
-		
-		Calendar calendar = Calendar.getInstance();
-		calendar.setTime(dataInicial);
-		
-		for(int parcela = 1 ; parcela <= parcelaDesejada ; parcela ++) {
-		calendar.add(Calendar.MONTH, 1);
-		
-		DecimalFormat df = new DecimalFormat("#.##");
-		
-		System.out.println("\n\nNome do cliente: " + nome +
-				"\nProduto comprado: " + produto + 
-				"\nValor do produto: R$" + valorProduto + 
-				"\nNúmero de parcelas: " + parcelaDesejada +
-				"\nDetalhamento das parcelas: " +
-				"\nParcela " + parcela + ", vencimento é: " + new SimpleDateFormat("dd-MM-yyyy").format(calendar.getTime()) + 
-				"\nValor da Parcela: R$"+df.format(valorParcela));
-		
-		/*
-		 * JOptionPane.showMessageDialog(null, "\n\nNome do cliente: " + nome +
-		 * "\nProduto comprado: " + produto + "\nValor do produto: " + valorProduto +
-		 * "\nNúmero de parcelas: " + parcelaDesejada + "\nDetalhamento das parcelas: "
-		 * + "Parcela " + parcela + ", vencimento é: " + new
-		 * SimpleDateFormat("dd-MM-yyyy").format(calendar.getTime()) +
-		 * "\nValor da Parcela: "+valorParcela);
-		 */
-		}
 		
 		}
 		

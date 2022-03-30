@@ -9,19 +9,21 @@ public class DatasEmJava {
 	
 	public static void main(String[] args) throws ParseException {
 		
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		Calendar calendar = Calendar.getInstance();
 		
-		Date dataVencimentoBoleto = simpleDateFormat.parse("10/04/2022");
+		calendar.setTime(new SimpleDateFormat("dd-MM-yyyy").parse("10-03-2022"));/*Definindo data qualquer*/
 		
-		Date dataAtualHoje = simpleDateFormat.parse("10/04/2022");
+		calendar.add(Calendar.DAY_OF_MONTH, 1);
 		
-		if(dataVencimentoBoleto.after(dataAtualHoje)) {
-			System.out.println("Boleto não vencido");
-		}else if(dataVencimentoBoleto.equals(dataAtualHoje)){
-			System.out.println("Boleto vence hoje");
-		}else {
-			System.out.println("Boleto vencido");
-		}
+		System.out.println(new SimpleDateFormat("dd-MM-yyyy").format(calendar.getTime()));
+		
+		calendar.add(Calendar.MONTH, -12);
+		
+		System.out.println(new SimpleDateFormat("dd-MM-yyyy").format(calendar.getTime()));
+		
+		calendar.add(Calendar.YEAR, 1);
+		
+		System.out.println(new SimpleDateFormat("dd-MM-yyyy").format(calendar.getTime()));
 			
 		}
 		

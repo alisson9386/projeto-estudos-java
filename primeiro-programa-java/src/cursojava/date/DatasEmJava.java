@@ -7,6 +7,7 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
@@ -18,22 +19,28 @@ public class DatasEmJava {
 	
 	public static void main(String[] args) throws ParseException, InterruptedException {
 		
-		Instant inicio = Instant.now();
+		LocalDate dataAntiga = LocalDate.parse("2010-03-07");
 		
-		Thread.sleep(2000);
+		LocalDate dataNova = LocalDate.parse("2021-04-03");
 		
-		Instant ifinal = Instant.now();
+		System.out.println("Data antiga é maior que data nova? "+dataAntiga.isAfter(dataNova));
 		
-		Duration duracao = Duration.between(inicio, ifinal);
+		System.out.println("Data antiga é anterior a data nova? "+dataAntiga.isBefore(dataNova));
 		
-		System.out.println("Duração em nano segundos: " + duracao.toNanos());
+		System.out.println("Datas são iguais? " + dataAntiga.isEqual(dataNova));
 		
-		System.out.println("Duração em Minutos: " + duracao.toMinutes());
 		
-		System.out.println("Duração em Horas: " + duracao.toHours());
+		Period periodo = Period.between(dataAntiga, dataNova);
 		
-		System.out.println("Duração em milisegundos: " + duracao.toMillis());
+		System.out.println("Quantos dias tem a faiza de periodo? "+periodo.getDays());
 		
+		System.out.println("Quantos meses tem a faiza de periodo? "+periodo.getMonths());
+		
+		System.out.println("Quantos anos tem a faiza de periodo? "+periodo.getYears());
+		
+		System.out.println("Somente em meses: "+periodo.toTotalMonths());
+		
+		System.out.println("Periodo anos: " + periodo.getYears() + " anos, "+periodo.getMonths() + " meses e "+periodo.getDays() + " dias");
 		
 		}
 		

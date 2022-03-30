@@ -1,5 +1,6 @@
 package cursojava.date;
 
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -23,6 +24,8 @@ public class DatasEmJava {
 		
 		double valorParcela = valorProduto / parcelaDesejada;
 		
+		
+		
 		Date dataInicial = new SimpleDateFormat("dd-MM-yyyy").parse("30-03-2022");
 		
 		Calendar calendar = Calendar.getInstance();
@@ -31,15 +34,24 @@ public class DatasEmJava {
 		for(int parcela = 1 ; parcela <= parcelaDesejada ; parcela ++) {
 		calendar.add(Calendar.MONTH, 1);
 		
-		System.out.println("Parcela " + parcela + ", vencimento é: " + new SimpleDateFormat("dd-MM-yyyy").format(calendar.getTime()));
+		DecimalFormat df = new DecimalFormat("#.##");
 		
-		JOptionPane.showMessageDialog(null, "Nome do cliente: " + nome +
-											"\nProduto comprado: " + produto + 
-											"\nValor do produto: " + valorProduto + 
-											"\nNúmero de parcelas: " + parcelaDesejada +
-											"\nDetalhamento das parcelas: " +
-											"Parcela " + parcela + ", vencimento é: " + new SimpleDateFormat("dd-MM-yyyy").format(calendar.getTime()) + 
-											"\nValor da Parcela: "+valorParcela);
+		System.out.println("\n\nNome do cliente: " + nome +
+				"\nProduto comprado: " + produto + 
+				"\nValor do produto: R$" + valorProduto + 
+				"\nNúmero de parcelas: " + parcelaDesejada +
+				"\nDetalhamento das parcelas: " +
+				"\nParcela " + parcela + ", vencimento é: " + new SimpleDateFormat("dd-MM-yyyy").format(calendar.getTime()) + 
+				"\nValor da Parcela: R$"+df.format(valorParcela));
+		
+		/*
+		 * JOptionPane.showMessageDialog(null, "\n\nNome do cliente: " + nome +
+		 * "\nProduto comprado: " + produto + "\nValor do produto: " + valorProduto +
+		 * "\nNúmero de parcelas: " + parcelaDesejada + "\nDetalhamento das parcelas: "
+		 * + "Parcela " + parcela + ", vencimento é: " + new
+		 * SimpleDateFormat("dd-MM-yyyy").format(calendar.getTime()) +
+		 * "\nValor da Parcela: "+valorParcela);
+		 */
 		}
 		
 		}

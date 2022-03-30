@@ -16,17 +16,19 @@ public class DatasEmJava {
 	
 	public static void main(String[] args) throws ParseException {
 		
-		/*Nova API de data do Java 8 em diante*/
-		
 		LocalDate dataAtual = LocalDate.now();
 		
-		LocalTime horaAtual = LocalTime.now();
-		
-		LocalDateTime dataEHoraAtual = LocalDateTime.now();
-		
 		System.out.println("Data atual: "+dataAtual.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
-		System.out.println("Hora atual: "+horaAtual.format(DateTimeFormatter.ofPattern("HH:mm.ss")));
-		System.out.println("Hora e data atual: "+ dataEHoraAtual.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+		
+		System.out.println("Dia da semana: " + dataAtual.getDayOfWeek());
+		
+		System.out.println("Dia do mês: " + dataAtual.getDayOfMonth());
+		
+		System.out.println("Dia do ano: " + dataAtual.getDayOfYear());
+		
+		System.out.println("Mês: "+ dataAtual.getMonth());
+		
+		System.out.println("Ano: " + dataAtual.getYear());
 		
 		
 		

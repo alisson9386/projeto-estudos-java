@@ -12,7 +12,7 @@ public class LerArquivoTxt {
 	public static void main(String[] args) throws FileNotFoundException {
 		
 		FileInputStream entradaArquivo 
-		= new FileInputStream(new File("C:\\\\Users\\\\Alisson\\\\Documents\\\\GitHub\\\\primeiro-projeto-java\\\\primeiro-programa-java\\\\src\\\\cursojava\\\\arquivos\\\\arquivo.txt"));
+		= new FileInputStream(new File("C:\\\\Users\\\\Alisson\\\\Documents\\\\GitHub\\\\primeiro-projeto-java\\\\primeiro-programa-java\\\\src\\\\cursojava\\\\arquivos\\\\arquivo.csv"));
 		
 		@SuppressWarnings("resource")
 		Scanner lerAquivo = new Scanner(entradaArquivo, "UTF-8");

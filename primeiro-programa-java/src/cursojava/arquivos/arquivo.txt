@@ -1,0 +1,3 @@
+Alisson Vieira;pessoa1@gmail.com;50
+Rafaela Vieira;pessoa2@gmail.com;25
+Nivaldo Vieira;pessoa1=3@gmail.com;40

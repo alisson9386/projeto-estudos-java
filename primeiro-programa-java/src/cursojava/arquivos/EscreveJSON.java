@@ -25,10 +25,17 @@ public class EscreveJSON {
 		usuario2.setSenha("03011978");
 		usuario2.setNome("Rafaela Restier");
 		
+		Usuario usuario3 = new Usuario();
+		usuario3.setCpf("72943777668");
+		usuario3.setLogin("nivaldo");
+		usuario3.setSenha("061294");
+		usuario3.setNome("Nivaldo Francisco");
+		
 		List<Usuario> usuarios = new ArrayList<Usuario>();
 		
 		usuarios.add(usuario1);
 		usuarios.add(usuario2);
+		usuarios.add(usuario3);
 		
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		String jsonUser = gson.toJson(usuarios);

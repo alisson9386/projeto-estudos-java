@@ -2,7 +2,7 @@
   {
     "login": "alisson",
     "senha": "Adcv9386",
-    "nome": "Alisson Vieira",
+    "nome": "Alisson Deives",
     "cpf": "13502004684"
   },
   {
@@ -10,5 +10,11 @@
     "senha": "03011978",
     "nome": "Rafaela Restier",
     "cpf": "14461521621"
+  },
+  {
+    "login": "nivaldo",
+    "senha": "061294",
+    "nome": "Nivaldo Francisco",
+    "cpf": "72943777668"
   }
 ]

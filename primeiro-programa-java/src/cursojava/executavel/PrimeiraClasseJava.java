@@ -60,6 +60,7 @@ public class PrimeiraClasseJava {
 			
 			for(int pos = 1; pos <= 1 ; pos++) {
 				String nomeDisciplina = JOptionPane.showInputDialog("Nome da disciplina "+ pos+" ?");
+				@SuppressWarnings("unused")
 				String notaDisciplina = JOptionPane.showInputDialog("Nota da disciplina "+ pos+" ?");
 				
 				Disciplina disciplina = new Disciplina();

@@ -19,6 +19,7 @@ public class ImplementacaoFilaThread extends Thread {
 		
 		while (true) {
 		
+		@SuppressWarnings("rawtypes")
 		Iterator iteracao = pilha_fila.iterator();
 		
 		synchronized (pilha_fila) { /*Bloqueia o acesso a essa lista por outros processos*/

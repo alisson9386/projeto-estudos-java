@@ -11,8 +11,6 @@ import javax.swing.plaf.InsetsUIResource;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 public class TelaTimeThread extends JDialog {
 	
@@ -75,6 +73,7 @@ public class TelaTimeThread extends JDialog {
 			
 			jButton.addActionListener(new ActionListener() {
 				
+				@SuppressWarnings("static-access")
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					
@@ -98,6 +97,7 @@ public class TelaTimeThread extends JDialog {
 			
 			jButton2.addActionListener(new ActionListener() {
 
+				@SuppressWarnings("deprecation")
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					

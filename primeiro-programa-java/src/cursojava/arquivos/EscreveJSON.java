@@ -17,7 +17,7 @@ public class EscreveJSON {
 		usuario1.setCpf("13502004684");
 		usuario1.setLogin("alisson");
 		usuario1.setSenha("Adcv9386");
-		usuario1.setNome("Alisson Vieira");
+		usuario1.setNome("Alisson Deives");
 		
 		Usuario usuario2 = new Usuario();
 		usuario2.setCpf("14461521621");

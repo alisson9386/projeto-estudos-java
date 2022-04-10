@@ -134,6 +134,8 @@ public class TelaTimeThread extends JDialog {
 					jButton.setEnabled(true);
 					jButton2.setEnabled(false);
 					
+					
+					
 				}
 				
 			});
